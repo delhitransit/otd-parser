@@ -12,6 +12,7 @@ import com.delhitransit.core.service.StopTimeService;
 import com.delhitransit.core.service.TripService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -44,27 +45,32 @@ public class DelhiTransitController {
 
     @GetMapping("routes")
     public List<RouteEntity> getAllRoutes() {
-        return routeService.getAllRoutes().subList(0, 19);
+        return routeService.getAllRoutes();
+    }
+
+    @GetMapping("routes/id/{id}")
+    public List<RouteEntity> getRoutesByRouteId(@PathVariable(name = "id") long routeId) {
+        return routeService.getRouteByRouteId(routeId);
     }
 
     @GetMapping("trips")
     public List<TripEntity> getAllTrips() {
-        return tripService.getAllTrips().subList(0, 19);
+        return tripService.getAllTrips();
     }
 
     @GetMapping("shapePoints")
     public List<ShapePointEntity> getAllShapePoints() {
-        return shapePointService.getAllShapePoints().subList(0, 19);
+        return shapePointService.getAllShapePoints();
     }
 
     @GetMapping("stops")
     public List<StopEntity> getAllStops() {
-        return stopService.getAllStops().subList(0, 19);
+        return stopService.getAllStops();
     }
 
     @GetMapping("stopTimes")
     public List<StopTimeEntity> getAllStopTimes() {
-        return stopTimeService.getAllStopTimes().subList(0, 19);
+        return stopTimeService.getAllStopTimes();
     }
 
 }
