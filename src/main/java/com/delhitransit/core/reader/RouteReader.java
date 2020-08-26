@@ -16,10 +16,6 @@ import java.util.List;
 
 public class RouteReader {
 
-    public List<Route> read() throws IOException {
-        return read("src/main/resources/static/routes.txt");
-    }
-
     public List<Route> read(String filepath) throws IOException {
         List<Route> routes = new LinkedList<>();
 

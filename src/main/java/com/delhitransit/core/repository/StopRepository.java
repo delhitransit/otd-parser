@@ -4,11 +4,11 @@
 
 package com.delhitransit.core.repository;
 
-import com.delhitransit.core.model.Route;
+import com.delhitransit.core.model.Stop;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface StopRepository extends JpaRepository<Route, Long> {
+public interface StopRepository extends JpaRepository<Stop, Long> {
 
 }

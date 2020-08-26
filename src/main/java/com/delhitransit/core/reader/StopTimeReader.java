@@ -16,10 +16,6 @@ import java.util.List;
 
 public class StopTimeReader {
 
-    public List<StopTime> read() throws IOException {
-        return read("src/main/resources/static/stop_times.txt");
-    }
-
     public List<StopTime> read(String filepath) throws IOException {
         List<StopTime> stopTimes = new LinkedList<>();
 

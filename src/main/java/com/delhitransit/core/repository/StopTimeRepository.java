@@ -4,7 +4,6 @@
 
 package com.delhitransit.core.repository;
 
-import com.delhitransit.core.model.Route;
 import com.delhitransit.core.model.StopTime;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

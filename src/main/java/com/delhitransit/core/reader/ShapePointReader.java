@@ -17,10 +17,6 @@ import java.util.List;
 
 public class ShapePointReader {
 
-    public List<ShapePoint> read() throws IOException {
-        return read("src/main/resources/static/shapes.txt");
-    }
-
     public List<ShapePoint> read(String filepath) throws IOException {
         List<ShapePoint> shapePoints = new LinkedList<>();
 

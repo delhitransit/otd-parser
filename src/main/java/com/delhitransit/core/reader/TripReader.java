@@ -16,10 +16,6 @@ import java.util.List;
 
 public class TripReader {
 
-    public List<Trip> read() throws IOException {
-        return read("src/main/resources/static/trips.txt");
-    }
-
     public List<Trip> read(String filepath) throws IOException {
         List<Trip> trips = new LinkedList<>();
 
