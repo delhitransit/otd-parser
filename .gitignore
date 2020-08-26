@@ -1,6 +1,3 @@
-# Ignore static files (prevent overwrite between branches)
-src/main/resources/static/*
-
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
