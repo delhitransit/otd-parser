@@ -5,7 +5,7 @@
 
 package com.delhitransit.core.reader;
 
-import com.delhitransit.core.model.parseable.ShapePoint;
+import com.delhitransit.core.model.ShapePoint;
 
 import java.io.BufferedReader;
 import java.io.File;

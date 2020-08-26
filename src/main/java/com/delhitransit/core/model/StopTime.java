@@ -2,7 +2,7 @@
  * @author Tanmay Singal
  */
 
-package com.delhitransit.core.model.parseable;
+package com.delhitransit.core.model;
 
 import lombok.Getter;
 
