@@ -4,10 +4,27 @@
 
 package com.delhitransit.core.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Getter;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  * For more information see https://developers.google.com/transit/gtfs/reference/#shapestxt
  */
+@Entity
 public class ShapePoint {
+
+    @Getter
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(nullable = false)
+    @JsonIgnore
+    private long key;
 
     /**
      * Identifies a shape.
