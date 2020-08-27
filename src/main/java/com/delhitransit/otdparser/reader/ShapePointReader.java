@@ -3,9 +3,9 @@
  */
 
 
-package com.delhitransit.core.reader;
+package com.delhitransit.otdparser.reader;
 
-import com.delhitransit.core.model.ShapePoint;
+import com.delhitransit.otdparser.model.ShapePoint;
 
 import java.io.BufferedReader;
 import java.io.File;

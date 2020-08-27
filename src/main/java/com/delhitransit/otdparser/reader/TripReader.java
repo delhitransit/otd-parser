@@ -2,9 +2,9 @@
  * @author Ankit Varshney
  */
 
-package com.delhitransit.core.reader;
+package com.delhitransit.otdparser.reader;
 
-import com.delhitransit.core.model.Trip;
+import com.delhitransit.otdparser.model.Trip;
 
 import java.io.BufferedReader;
 import java.io.File;

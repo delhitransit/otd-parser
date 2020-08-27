@@ -3,9 +3,9 @@
  */
 
 
-package com.delhitransit.core.reader;
+package com.delhitransit.otdparser.reader;
 
-import com.delhitransit.core.model.ShapePoint;
+import com.delhitransit.otdparser.model.ShapePoint;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;

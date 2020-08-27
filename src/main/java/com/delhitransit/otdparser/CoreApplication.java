@@ -2,9 +2,9 @@
  * @author Tanmay Singal
  */
 
-package com.delhitransit.core;
+package com.delhitransit.otdparser;
 
-import com.delhitransit.core.controller.AdminController;
+import com.delhitransit.otdparser.controller.AdminController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -2,9 +2,9 @@
  * @author nitin-singla
  */
 
-package com.delhitransit.core.reader;
+package com.delhitransit.otdparser.reader;
 
-import com.delhitransit.core.model.Stop;
+import com.delhitransit.otdparser.model.Stop;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;

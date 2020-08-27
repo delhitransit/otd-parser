@@ -1,10 +1,10 @@
 /*
- * @author nitin-singla
+ * @author Tanmay Singal
  */
 
-package com.delhitransit.core.reader;
+package com.delhitransit.otdparser.reader;
 
-import com.delhitransit.core.model.Stop;
+import com.delhitransit.otdparser.model.Route;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -14,10 +14,10 @@ import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.List;
 
-public class StopReader {
+public class RouteReader {
 
-    public List<Stop> read(String filepath) throws IOException {
-        List<Stop> stops = new LinkedList<>();
+    public List<Route> read(String filepath) throws IOException {
+        List<Route> routes = new LinkedList<>();
 
         FileInputStream fileInputStream = new FileInputStream(new File(filepath));
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream));
@@ -30,39 +30,35 @@ public class StopReader {
         while (line != null) {
             // readLine() automatically moves to next line after reading
             line = bufferedReader.readLine();
-            Stop stop = readLine(line);
-            if (stop != null) {
-                stops.add(stop);
+            Route route = readLine(line);
+            if (route != null) {
+                routes.add(route);
             }
         }
 
         bufferedReader.close();
 
-        return stops;
+        return routes;
     }
 
-    public Stop readLine(String line) {
+    public Route readLine(String line) {
         //Skip any empty lines
         if (line != null && !line.isBlank()) {
             String[] strings = line.split(",");
-            if (strings.length == 4) {
-                return new Stop()
-                        .setStopId(Long.parseLong(strings[0]))
-                        .setName(strings[1])
-                        .setLatitude(Double.parseDouble(strings[2]))
-                        .setLongitude(Double.parseDouble(strings[3]));
+            if (strings.length == 5) {
+                return new Route()
+                        .setShortName(strings[0])
+                        .setLongName(strings[1])
+                        .setType(Integer.parseInt(strings[2]))
+                        .setRouteId(Long.parseLong(strings[3]))
+                        .setAgencyId(strings[4]);
             } else {
                 System.err.println(
                         "Skipped reading line due to missing data." +
-                                " Expected length was 4 but instead found " + strings.length + "." +
+                                " Expected length was 5 but instead found " + strings.length + "." +
                                 " String: " + line);
             }
         }
         return null;
     }
 }
-
-
-
-
-

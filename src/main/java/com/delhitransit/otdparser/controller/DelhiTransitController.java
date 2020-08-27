@@ -1,15 +1,15 @@
-package com.delhitransit.core.controller;
+package com.delhitransit.otdparser.controller;
 
-import com.delhitransit.core.model.Route;
-import com.delhitransit.core.model.ShapePoint;
-import com.delhitransit.core.model.Stop;
-import com.delhitransit.core.model.StopTime;
-import com.delhitransit.core.model.Trip;
-import com.delhitransit.core.repository.RouteRepository;
-import com.delhitransit.core.repository.ShapePointRepository;
-import com.delhitransit.core.repository.StopRepository;
-import com.delhitransit.core.repository.StopTimeRepository;
-import com.delhitransit.core.repository.TripRepository;
+import com.delhitransit.otdparser.model.Route;
+import com.delhitransit.otdparser.model.ShapePoint;
+import com.delhitransit.otdparser.model.Stop;
+import com.delhitransit.otdparser.model.StopTime;
+import com.delhitransit.otdparser.model.Trip;
+import com.delhitransit.otdparser.repository.RouteRepository;
+import com.delhitransit.otdparser.repository.ShapePointRepository;
+import com.delhitransit.otdparser.repository.StopRepository;
+import com.delhitransit.otdparser.repository.StopTimeRepository;
+import com.delhitransit.otdparser.repository.TripRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

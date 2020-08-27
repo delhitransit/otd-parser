@@ -2,9 +2,9 @@
  * @author Tanmay Singal
  */
 
-package com.delhitransit.core.reader;
+package com.delhitransit.otdparser.reader;
 
-import com.delhitransit.core.model.Route;
+import com.delhitransit.otdparser.model.Route;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;

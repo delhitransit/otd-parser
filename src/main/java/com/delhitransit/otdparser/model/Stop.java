@@ -2,7 +2,7 @@
  * @author Tanmay Singal
  */
 
-package com.delhitransit.core.model;
+package com.delhitransit.otdparser.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;

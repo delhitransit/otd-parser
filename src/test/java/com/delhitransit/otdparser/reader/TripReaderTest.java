@@ -1,9 +1,9 @@
 /*
  * @author Ankit Varshney
  */
-package com.delhitransit.core.reader;
+package com.delhitransit.otdparser.reader;
 
-import com.delhitransit.core.model.Trip;
+import com.delhitransit.otdparser.model.Trip;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;

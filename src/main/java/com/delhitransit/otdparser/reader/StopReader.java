@@ -2,9 +2,9 @@
  * @author nitin-singla
  */
 
-package com.delhitransit.core.reader;
+package com.delhitransit.otdparser.reader;
 
-import com.delhitransit.core.model.StopTime;
+import com.delhitransit.otdparser.model.Stop;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -14,10 +14,10 @@ import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.List;
 
-public class StopTimeReader {
+public class StopReader {
 
-    public List<StopTime> read(String filepath) throws IOException {
-        List<StopTime> stopTimes = new LinkedList<>();
+    public List<Stop> read(String filepath) throws IOException {
+        List<Stop> stops = new LinkedList<>();
 
         FileInputStream fileInputStream = new FileInputStream(new File(filepath));
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream));
@@ -30,35 +30,39 @@ public class StopTimeReader {
         while (line != null) {
             // readLine() automatically moves to next line after reading
             line = bufferedReader.readLine();
-            StopTime stopTime = readLine(line);
-            if (stopTime != null) {
-                stopTimes.add(stopTime);
+            Stop stop = readLine(line);
+            if (stop != null) {
+                stops.add(stop);
             }
         }
 
         bufferedReader.close();
 
-        return stopTimes;
+        return stops;
     }
 
-    public StopTime readLine(String line) {
+    public Stop readLine(String line) {
         //Skip any empty lines
         if (line != null && !line.isBlank()) {
             String[] strings = line.split(",");
-            if (strings.length == 5) {
-                return new StopTime()
-                        .setTripId(strings[0])
-                        .setArrival(strings[1])
-                        .setDeparture(strings[2])
-                        .setStopId(Long.parseLong(strings[3]))
-                        .setStopSequence(Integer.parseInt(strings[4]));
+            if (strings.length == 4) {
+                return new Stop()
+                        .setStopId(Long.parseLong(strings[0]))
+                        .setName(strings[1])
+                        .setLatitude(Double.parseDouble(strings[2]))
+                        .setLongitude(Double.parseDouble(strings[3]));
             } else {
                 System.err.println(
                         "Skipped reading line due to missing data." +
-                                " Expected length was 5 but instead found " + strings.length + "." +
+                                " Expected length was 4 but instead found " + strings.length + "." +
                                 " String: " + line);
             }
         }
         return null;
     }
 }
+
+
+
+
+

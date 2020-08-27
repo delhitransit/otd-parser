@@ -2,9 +2,9 @@
  * @author Tanmay Singal
  */
 
-package com.delhitransit.core.repository;
+package com.delhitransit.otdparser.repository;
 
-import com.delhitransit.core.model.StopTime;
+import com.delhitransit.otdparser.model.StopTime;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

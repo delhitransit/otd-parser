@@ -9,10 +9,10 @@
         <relativePath/>
     </parent>
     <groupId>com.delhitransit</groupId>
-    <artifactId>core</artifactId>
+    <artifactId>otd-parser</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>core</name>
-    <description>Core services and APIs</description>
+    <description>OTD data parser developed for Delhi Transit API</description>
 
     <properties>
         <java.version>14</java.version>
