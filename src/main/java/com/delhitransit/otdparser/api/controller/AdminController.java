@@ -1,4 +1,4 @@
-package com.delhitransit.otdparser.controller;
+package com.delhitransit.otdparser.api.controller;
 
 import com.delhitransit.otdparser.model.Route;
 import com.delhitransit.otdparser.model.ShapePoint;

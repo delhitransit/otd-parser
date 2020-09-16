@@ -4,7 +4,7 @@
 
 package com.delhitransit.otdparser;
 
-import com.delhitransit.otdparser.controller.AdminController;
+import com.delhitransit.otdparser.api.controller.AdminController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
