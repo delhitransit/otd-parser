@@ -14,6 +14,8 @@ import java.io.IOException;
 @SpringBootApplication
 public class CoreApplication {
 
+    public static boolean isApplicationInitialized = false;
+
     private static AdminController adminController = null;
 
     @Autowired
@@ -25,6 +27,7 @@ public class CoreApplication {
         SpringApplication.run(CoreApplication.class, args);
         if (adminController != null) {
             adminController.initializeDatabase();
+            System.out.println("Application Initialization status : " + isApplicationInitialized);
         }
     }
 

@@ -1,5 +1,6 @@
 package com.delhitransit.otdparser.api.controller;
 
+import com.delhitransit.otdparser.CoreApplication;
 import com.delhitransit.otdparser.model.Route;
 import com.delhitransit.otdparser.model.ShapePoint;
 import com.delhitransit.otdparser.model.Stop;
@@ -49,6 +50,11 @@ public class AdminController {
         this.shapePointRepository = shapePointRepository;
     }
 
+    @GetMapping("init/status")
+    public boolean applicationInitializationStatus() {
+        return CoreApplication.isApplicationInitialized;
+    }
+
     @GetMapping("init")
     public void initializeDatabase() throws IOException {
 
@@ -66,6 +72,8 @@ public class AdminController {
 
         List<ShapePoint> shapePoints = new ShapePointReader().read("src/main/resources/dataset/mini/static/shapes.txt");
         shapePointRepository.saveAll(shapePoints);
+
+        CoreApplication.isApplicationInitialized = true;
     }
 
 }
