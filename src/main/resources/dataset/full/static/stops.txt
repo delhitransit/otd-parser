@@ -2319,7 +2319,7 @@ stop_id,stop_name,stop_lat,stop_lon
 2469,Savitri Cinema (E Block Gurudwara),28.539883000000003,77.2402
 2470,RR Hospital,28.590067,77.155817
 2471,Sarai Peepal Thala,28.720417,77.166983
-2472,"Rohini Sec-7,8 Xing",28.708,77.125
+2472,Rohini Sec 7 / 8 Xing,28.708,77.125
 2473,Krishna Colony,28.743833,77.08545
 2474,Don Bosco School,28.528046000000003,77.247943
 2475,Rajghat Cluster Depot,28.643983,77.2526

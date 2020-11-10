@@ -14,7 +14,7 @@ import java.io.IOException;
 @SpringBootApplication
 public class CoreApplication {
 
-    public static boolean isApplicationInitialized = false;
+    public static boolean isApplicationInitialized = true;
 
     private static AdminController adminController = null;
 
@@ -25,10 +25,10 @@ public class CoreApplication {
 
     public static void main(String[] args) throws IOException {
         SpringApplication.run(CoreApplication.class, args);
-        if (adminController != null) {
+        if (adminController != null && !isApplicationInitialized) {
             adminController.initializeDatabase();
-            System.out.println("Application Initialization status : " + isApplicationInitialized);
         }
+        System.out.println("Application Initialization status : " + isApplicationInitialized);
     }
 
 }

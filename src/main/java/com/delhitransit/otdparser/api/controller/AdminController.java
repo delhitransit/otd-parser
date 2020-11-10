@@ -38,6 +38,9 @@ public class AdminController {
 
     ShapePointRepository shapePointRepository;
 
+    public static final String MINI_DATASET = "mini";
+    public static final String FULL_DATASET = "full";
+
     @Autowired
     public AdminController(RouteRepository routeRepository, StopRepository stopRepository,
                            StopTimeRepository stopTimeRepository,
@@ -58,19 +61,21 @@ public class AdminController {
     @GetMapping("init")
     public void initializeDatabase() throws IOException {
 
-        List<Route> routes = new RouteReader().read("src/main/resources/dataset/mini/static/routes.txt");
+        final String basePath = "src/main/resources/dataset/"+ FULL_DATASET +"/static/";
+
+        List<Route> routes = new RouteReader().read(basePath + "routes.txt");
         routeRepository.saveAll(routes);
 
-        List<Stop> stops = new StopReader().read("src/main/resources/dataset/mini/static/stops.txt");
+        List<Stop> stops = new StopReader().read(basePath + "stops.txt");
         stopRepository.saveAll(stops);
 
-        List<StopTime> stopTimes = new StopTimeReader().read("src/main/resources/dataset/mini/static/stop_times.txt");
+        List<StopTime> stopTimes = new StopTimeReader().read(basePath + "stop_times.txt");
         stopTimeRepository.saveAll(stopTimes);
 
-        List<Trip> trips = new TripReader().read("src/main/resources/dataset/mini/static/trips.txt");
+        List<Trip> trips = new TripReader().read(basePath + "trips.txt");
         tripRepository.saveAll(trips);
 
-        List<ShapePoint> shapePoints = new ShapePointReader().read("src/main/resources/dataset/mini/static/shapes.txt");
+        List<ShapePoint> shapePoints = new ShapePointReader().read(basePath + "shapes.txt");
         shapePointRepository.saveAll(shapePoints);
 
         CoreApplication.isApplicationInitialized = true;
