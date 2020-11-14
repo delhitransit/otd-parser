@@ -14,7 +14,7 @@ import java.io.IOException;
 @SpringBootApplication
 public class CoreApplication {
 
-    public static boolean isApplicationInitialized = true;
+    public static boolean isApplicationInitialized = false;
 
     private static AdminController adminController = null;
 

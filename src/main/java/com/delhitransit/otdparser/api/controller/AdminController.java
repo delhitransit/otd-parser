@@ -61,7 +61,7 @@ public class AdminController {
     @GetMapping("init")
     public void initializeDatabase() throws IOException {
 
-        final String basePath = "src/main/resources/dataset/"+ FULL_DATASET +"/static/";
+        final String basePath = "src/main/resources/dataset/"+ MINI_DATASET +"/static/";
 
         List<Route> routes = new RouteReader().read(basePath + "routes.txt");
         routeRepository.saveAll(routes);
