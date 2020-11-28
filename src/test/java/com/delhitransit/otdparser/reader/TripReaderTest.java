@@ -44,7 +44,7 @@ public class TripReaderTest {
             String tripId = trip.getTripId();
             assertTrue(tripId.equals("1_11_10") || tripId.equals("2_12_11"));
             int shapeId = trip.getShapeId();
-            assertTrue(shapeId == 13 || shapeId == 0);
+            assertTrue(shapeId == 13 || shapeId == -1);
         }
     }
 }

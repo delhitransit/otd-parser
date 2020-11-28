@@ -46,7 +46,8 @@ public class TripReader {
                 case 3:
                     return new Trip()
                             .setRouteId(Integer.parseInt(strings[0]))
-                            .setTripId(strings[2]);
+                            .setTripId(strings[2])
+                            .setShapeId(-1);
                 case 4:
                     return new Trip()
                             .setRouteId(Integer.parseInt(strings[0]))
